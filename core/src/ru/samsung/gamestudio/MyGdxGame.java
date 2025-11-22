@@ -1,32 +1,40 @@
 package ru.samsung.gamestudio;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
-public class MyGdxGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+import ru.samsung.gamestudio.screen.ScreenGame;
+import ru.samsung.gamestudio.screen.ScreenMenu;
+import ru.samsung.gamestudio.screen.ScreenRestart;
 
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-	}
+public class MyGdxGame extends Game {
 
-	@Override
-	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
+    public SpriteBatch batch;
+    public OrthographicCamera camera;
 
-	@Override
-	public void dispose () {
-		batch.dispose();
-		img.dispose();
-	}
+    public static final int SCR_WIDTH = 1280;
+    public static final int SCR_HEIGHT = 720;
+
+    public ScreenGame screenGame;
+    public ScreenRestart screenRestart;
+    public ScreenMenu screenMenu;
+
+    @Override
+    public void create() {
+        batch = new SpriteBatch();
+        camera = new OrthographicCamera();
+        camera.setToOrtho(false, SCR_WIDTH, SCR_HEIGHT);
+
+        screenGame = new ScreenGame(this);
+        screenRestart = new ScreenRestart(this);
+        screenMenu = new ScreenMenu(this);
+        setScreen(screenMenu);
+    }
+
+
+    @Override
+    public void dispose() {
+        batch.dispose();
+    }
 }
-
