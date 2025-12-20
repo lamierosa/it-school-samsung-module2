@@ -16,7 +16,7 @@ public class MovingBackground {
     public MovingBackground(String pathToTexture) {
         texture1X = 0;
         texture2X = MyGdxGame.SCR_WIDTH;
-        texture = new Texture("pictures_for_game/background/game_bg.png");
+        texture = new Texture(pathToTexture);
     }
 
     public void move() {

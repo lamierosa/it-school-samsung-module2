@@ -2,18 +2,16 @@ package ru.samsung.gamestudio.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import ru.samsung.gamestudio.MyGdxGame;
 import ru.samsung.gamestudio.component.MovingBackground;
-import ru.samsung.gamestudio.component.MovingBackground1;
 import ru.samsung.gamestudio.component.TextButton;
 
 public class ScreenMenu implements Screen {
     MyGdxGame myGdxGame;
-    MovingBackground1 background;
+    MovingBackground background;
     TextButton buttonStart;
     TextButton buttonExit;
 
@@ -22,7 +20,7 @@ public class ScreenMenu implements Screen {
 
         buttonStart = new TextButton(400,450,"Start");
         buttonExit = new TextButton(400,150,"Exit");
-        background = new MovingBackground1("pictures_for_game/background/restart_bg.png");
+        background = new MovingBackground("pictures_for_game/background/restart_bg.png");
     }
 
     @Override

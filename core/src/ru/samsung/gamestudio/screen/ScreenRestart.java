@@ -5,9 +5,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import ru.samsung.gamestudio.component.MovingBackground;
 import ru.samsung.gamestudio.MyGdxGame;
-import ru.samsung.gamestudio.component.MovingBackground1;
+import ru.samsung.gamestudio.component.MovingBackground;
 import ru.samsung.gamestudio.component.PointCounter;
 import ru.samsung.gamestudio.component.TextButton;
 
@@ -15,7 +14,7 @@ public class ScreenRestart implements Screen {
 
     MyGdxGame myGdxGame;
 
-    MovingBackground1 background;
+    MovingBackground background;
     TextButton buttonRestart;
     TextButton buttonMenu;
     PointCounter pointCounter;
@@ -28,7 +27,7 @@ public class ScreenRestart implements Screen {
         pointCounter = new PointCounter(750, 530);
         buttonRestart = new TextButton(100, 400, "Restart");
         buttonMenu = new TextButton(100,200,"Menu");
-        background = new MovingBackground1("pictures_for_game/background/restart_bg.png");
+        background = new MovingBackground("pictures_for_game/background/restart_bg.png");
     }
 
     @Override
